@@ -77,11 +77,11 @@ export default function Product() {
         <CategorySlider />
       </div>
 
-      <div className="row g-4 mt-5">
+      <div className="row g-4  mt-5  ">
         {allProducts.map((item, index) => (
           <div
             key={index}
-            className="product col-md-3  p-3 rounded-3 bg-body-tertiary"
+            className="product col-md-3  p-3 rounded-3 bg-body-tertiary  "
           >
             <div className="">
               <Link to={`/productDetiels/${item.id}`}>
