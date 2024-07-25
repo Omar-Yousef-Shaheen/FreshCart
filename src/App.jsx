@@ -90,10 +90,15 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      { path: "*", element: <NotFound /> },
+      { path: "*", element: <NotFound /> }
+     
     ],
   },
-]);
+],
+{
+  basename: "/FreshCart",
+}
+);
 // React -Query => Handle Async State (Cached Data)
 const myClient = new QueryClient();
 
@@ -103,7 +108,7 @@ function App() {
       <QueryClientProvider client={myClient}>
         <AuthenContextProvider>
           <CartContextProvider>
-            <RouterProvider router={router} />
+            <RouterProvider  router={router} />
           </CartContextProvider>
         </AuthenContextProvider>
       </QueryClientProvider>
