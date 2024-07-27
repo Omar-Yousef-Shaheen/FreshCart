@@ -1,15 +1,16 @@
 import axios from "axios"
 import { useQuery } from "react-query"
-import { Navigate, useParams } from "react-router-dom"
+import { Navigate, useNavigate, useParams } from "react-router-dom"
 import Slider from "react-slick";
 import { useContext } from "react";
 import Loading from "../Loading/Loading";
 import { cartContext } from "../../Context/CartContext";
-
+import Product from "../Products/Products";
 export default function ProductDetiels() {
   // *CartContext 
-   const { postProductToCart} = useContext(cartContext)
-
+  const { postProductToCart} = useContext(cartContext)
+   const nav =   useNavigate()
+  
 
 
   // ^ Slider
@@ -42,7 +43,10 @@ export default function ProductDetiels() {
   const productDetails = data.data.data
   return (
     <div className="container">
-      <div className="row align-items-center   ">
+      <div className="mt-2">
+        <button onClick={()=>{nav("/products")}} className="btn bg-main text-white fw-semibold">Back</button>
+      </div>
+      <div className="row align-items-center">
         <div className="col-md-4">
           <div className="border border-1 border-dark-subtle rounded-3 my-5 py-3">
           <Slider {...settings}>
@@ -87,7 +91,7 @@ export default function ProductDetiels() {
             </div>
             <button
               onClick={()=>{postProductToCart (productDetails.id)}}
-              className="mt-3 btn bg-main w-100 text-white"
+              className="mt-3 btn bg-main w-100 text-white fw-semibold"
             >
               Add to cart 
             </button>

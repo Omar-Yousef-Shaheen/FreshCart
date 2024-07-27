@@ -23,7 +23,7 @@ export default function Cart() {
     <>
       {allProducts.length > 0 ? (
         <div className="container  bg-main-light p-5">
-          <div className="d-flex  justify-content-between align-items-center pt-5">
+          <div className="d-flex gap-2 justify-content-between align-items-center pt-5 flex-wrap">
             <div>
               <h2 className="fw-bold border-bottom border-3">Shop Cart:</h2>
               <h5 className="text-main fw-semibold">
@@ -39,7 +39,7 @@ export default function Cart() {
               onClick={() => {
                 clearCart();
               }}
-              className="btn btn-outline-success"
+              className="btn btn-outline-success "
             >
               Clear Cart
             </button>
@@ -47,19 +47,21 @@ export default function Cart() {
           {allProducts.map((product, index) => (
             <div
               key={index}
-              className="row align-items-center border-bottom border-2 "
+              className="row align-items-center  border-bottom border-2 pb-4 gap-2 my-4   "
             >
-              <div className="col-md-2">
+
+              <div className="col-md-4">
                 <figure>
                   <img
-                    className="w-100 pt-4"
+                    className="w-100 "
                     src={product.product.imageCover}
                     alt={product.product.title}
                   />
                 </figure>
               </div>
-              <div className="col-md-8">
-                <article>
+
+              <div className="col-md-6">
+                <article >
                   <figure className="w-50">
                     <img
                       className="w-25"
@@ -86,23 +88,23 @@ export default function Cart() {
                 </article>
               </div>
 
-              <div className="col-md-2">
-                <div className="d-flex justify-content-around align-items-center">
+              <div className="col-md-4">
+                <div className="d-flex justify-content-around align-items-center ">
                   <button
                     onClick={() => {
                       changeCountProduct(product.product.id, product.count + 1);
                     }}
-                    className="btn btn-outline-success"
+                    className="btn btn-outline-success fw-bold fs-6 "
                   >
                     +
                   </button>
-                  <span>{product.count}</span>
+                  <span className="bg-opacity-50 bg-light px-3 py-2 rounded-5 fw-bold fs-5">{product.count}</span>
                   <button
                     disabled={product.count === 0}
                     onClick={() => {
                       changeCountProduct(product.product.id, product.count - 1);
                     }}
-                    className="btn btn-outline-success"
+                    className="btn btn-outline-success fw-bold fs-6 "
                   >
                     -
                   </button>

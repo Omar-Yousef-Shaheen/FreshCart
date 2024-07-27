@@ -48,8 +48,8 @@ export default function Product() {
 
   return (
     <div className="container">
-      <div className="row g-0 flex-nowrap   my-5">
-        <div className=" col-md-8">
+      <div className="row g-0 flex-nowrap my-5 display-none ">
+        <div className="  col-md-8">
           <AutoPlay />
         </div>
         <div className=" col-md-4">
@@ -73,7 +73,7 @@ export default function Product() {
       </div>
 
       <div>
-        <h3 className="fw-bold mb-4">Shop Popular Categories :</h3>
+        <h3 className="fw-bold my-4 ">Shop Popular Categories :</h3>
         <CategorySlider />
       </div>
 

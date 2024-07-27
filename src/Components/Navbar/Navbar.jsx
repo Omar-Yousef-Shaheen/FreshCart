@@ -85,7 +85,7 @@ export default function Navbar() {
                 <li className="nav-item position-relative">
                   <Link className="nav-link" to="/cart">
                     Cart
-                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-main">
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-main display-none ">
                       {numOfCartItem ? numOfCartItem : ""}
                     </span>
                   </Link>
